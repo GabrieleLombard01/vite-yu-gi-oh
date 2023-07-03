@@ -1,6 +1,7 @@
 <script >
+import appMain from '../src/components/appMain.vue'
 export default {
-
+  components: { appMain }
 };
 </script>
 
@@ -12,7 +13,7 @@ export default {
 
   <!--MAIN CONTENT:-->
   <main>
-
+    <appMain />
   </main>
 </template>
 
