@@ -1,0 +1,23 @@
+@use '../scss/vars' as *;
+
+/*GENERICS:*/
+body{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: linear-gradient( #b71b1b 75% , rgb(233, 233, 233) 25%);
+}
+main{
+    margin: 20px auto;
+    width: 70%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.714);
+    border-radius: 25px;
+}
+h1{
+    font-size: 70px;
+}
+/*UTILITY:*/
+.title_font{
+    font-family: $main-font;
+    color: rgb(255, 255, 0);
+}
