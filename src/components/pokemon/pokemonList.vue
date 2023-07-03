@@ -9,7 +9,7 @@ export default {
     },
     created() {
         axios.get(endpoint).then(res => {
-            console.log(res.data)
+            this.pokemon = res.data.docs;
         });
     }
 };
@@ -17,7 +17,9 @@ export default {
 
 <template>
     <section id="pokemon">
-
+        <ul>
+            <li v-for="pkm in pokemon" :key="pkm._id">{{ pkm.name }}</li>
+        </ul>
     </section>
 </template>
 
