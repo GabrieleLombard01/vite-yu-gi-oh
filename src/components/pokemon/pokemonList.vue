@@ -1,7 +1,10 @@
 <script >
 import axios from 'axios';
 const endpoint = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?eq[type1]=Electric&sort[number]=desc';
+
+import pokemonCard from './pokemonCard.vue';
 export default {
+    components: { pokemonCard },
     data() {
         return {
             pokemon: []
@@ -20,7 +23,7 @@ export default {
 
         <div class="row g-2 row-cols-2 row-cols-md-3 row-cols-lg-4">
             <div v-for="pkm in pokemon" :key="pkm._id" class="col">
-                <div>{{ pkm.name }}</div>
+                <pokemonCard :name="pkm.name" :image="pkm.imageUrl" :type="pkm.type1" :number="pkm.number" />
             </div>
         </div>
 
