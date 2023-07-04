@@ -1,18 +1,14 @@
 <script >
 import axios from 'axios';
 const endpoint = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?eq[type1]=Electric&sort[number]=desc';
-
+import { store } from '../src/data/store';
 import appMain from '../src/components/appMain.vue'
 export default {
   components: { appMain },
-  data() {
-    return {
-      pokemon: []
-    }
-  },
+
   created() {
     axios.get(endpoint).then(res => {
-      this.pokemon = res.data.docs;
+      store.pokemon = res.data.docs;
     });
   }
 };
@@ -26,7 +22,7 @@ export default {
 
   <!--MAIN CONTENT:-->
   <main>
-    <appMain :pokemon="pokemon" />
+    <appMain />
   </main>
 </template>
 
