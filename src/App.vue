@@ -1,15 +1,21 @@
 <script >
 import axios from 'axios';
-const endpoint = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?eq[type1]=Electric&sort[number]=desc';
+const endpoint = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons';
+
 import { store } from '../src/data/store';
 import appMain from '../src/components/appMain.vue'
 export default {
   components: { appMain },
 
   created() {
+    store.isLoading = true;
     axios.get(endpoint).then(res => {
       store.pokemon = res.data.docs;
-    });
+    }).catch(err => {
+      console.error(err.message);
+    }).then(() => {
+      store.isLoading = false;
+    })
   }
 };
 </script>
