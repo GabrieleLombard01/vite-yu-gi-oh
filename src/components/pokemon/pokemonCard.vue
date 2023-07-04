@@ -10,8 +10,8 @@ export default {
 </script>
 
 <template>
-    <div class="card h-100">
-        <img :src="image" :alt="name" class="card-img-top img-fluid shadow">
+    <div class="card rounded-4 h-100">
+        <img :src="image" :alt="name" class="card-img-top img-fluid shadow  rounded-4">
         <div class="card-body">
             <h4>{{ name }}</h4>
             <div class="poke-type">{{ type }}</div>
@@ -30,5 +30,19 @@ h4 {
         margin: 1rem auto;
         background-color: rgba(128, 128, 128, 0.5);
     }
+}
+
+.card img {
+    filter: grayscale(50%);
+}
+
+.card:hover img {
+    filter: grayscale(0);
+}
+
+.card:hover {
+    border: solid black 3px;
+    border-style: outset;
+    cursor: pointer;
 }
 </style>
