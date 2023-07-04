@@ -17,9 +17,15 @@ export default {
 
 <template>
     <section id="pokemon">
-        <ul>
-            <li v-for="pkm in pokemon" :key="pkm._id">{{ pkm.name }}</li>
-        </ul>
+
+        <div class="row g-2 row-cols-2 row-cols-md-3 row-cols-lg-4">
+            <div v-for="pkm in pokemon" :key="pkm._id" class="col">
+                <div>{{ pkm.name }}</div>
+            </div>
+        </div>
+
+
+
     </section>
 </template>
 
