@@ -1,17 +1,27 @@
-<script >
+<script>
 export default {
     props: {
         name: String,
         image: String,
         type: String,
-        number: String
-    }
+        number: String,
+    },
+    data() {
+        return {
+            isActive: false,
+        };
+    },
+    methods: {
+        toggleCardStyle() {
+            this.isActive = !this.isActive;
+        },
+    },
 };
 </script>
 
 <template>
-    <div class="card rounded-4 h-100">
-        <img :src="image" :alt="name" class="card-img-top img-fluid shadow  rounded-4">
+    <div class="card rounded-4 h-100" :class="{ 'card-active': isActive }" @click="toggleCardStyle">
+        <img :src="image" :alt="name" class="card-img-top img-fluid shadow rounded-4">
         <div class="card-body">
             <h4>{{ name }}</h4>
             <div class="poke-type">{{ type }}</div>
@@ -32,6 +42,17 @@ h4 {
     }
 }
 
+.card {
+    transition: border-color 0.3s;
+    border: none;
+}
+
+.card-active {
+    border: solid gold 1px;
+    border-style: outset;
+    cursor: pointer;
+}
+
 .card img {
     filter: grayscale(50%);
 }
@@ -41,8 +62,12 @@ h4 {
 }
 
 .card:hover {
-    border: solid black 3px;
+    border: solid black 1px;
     border-style: outset;
     cursor: pointer;
+}
+
+.card-active img {
+    filter: grayscale(0%);
 }
 </style>
