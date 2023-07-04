@@ -10,11 +10,13 @@ export default {
 </script>
 
 <template>
-    <div class="poke-card text-center">
-        <img :src="image" :alt="name" class="img-fluid rounded-2">
-        <h4>{{ name }}</h4>
-        <div class="poke-type">{{ type }}</div>
-        <div class="poke-number">{{ number }}</div>
+    <div class="card h-100">
+        <img :src="image" :alt="name" class="card-img-top img-fluid">
+        <div class="card-body">
+            <h4>{{ name }}</h4>
+            <div class="poke-type">{{ type }}</div>
+            <div class="poke-number">{{ number }}</div>
+        </div>
     </div>
 </template>
 
