@@ -11,7 +11,7 @@ export default {
 
 <template>
     <div class="card h-100">
-        <img :src="image" :alt="name" class="card-img-top img-fluid">
+        <img :src="image" :alt="name" class="card-img-top img-fluid shadow">
         <div class="card-body">
             <h4>{{ name }}</h4>
             <div class="poke-type">{{ type }}</div>
@@ -20,4 +20,15 @@ export default {
     </div>
 </template>
 
-<style></style>
+<style scoped lang="scss">
+h4 {
+    &::after {
+        content: '';
+        width: 98%;
+        height: 1px;
+        display: block;
+        margin: 1rem auto;
+        background-color: rgba(128, 128, 128, 0.5);
+    }
+}
+</style>

@@ -1,20 +1,8 @@
 <script >
-import axios from 'axios';
-const endpoint = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?eq[type1]=Electric&sort[number]=desc';
-
 import pokemonCard from './pokemonCard.vue';
 export default {
     components: { pokemonCard },
-    data() {
-        return {
-            pokemon: []
-        }
-    },
-    created() {
-        axios.get(endpoint).then(res => {
-            this.pokemon = res.data.docs;
-        });
-    }
+    props: { pokemon: Array }
 };
 </script>
 
@@ -27,9 +15,6 @@ export default {
             </div>
         </div>
 
-
-
     </section>
 </template>
 
-<style scoped></style>
