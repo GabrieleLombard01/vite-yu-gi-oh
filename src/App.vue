@@ -3,10 +3,10 @@ import axios from 'axios';
 const endpoint = 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons';
 import { store } from '../src/data/store';
 import appMain from '../src/components/appMain.vue';
-import appSelect from '../src/components/appSelect.vue';
+import appHeader from '../src/components/appHeader.vue';
 
 export default {
-  components: { appMain, appSelect },
+  components: { appMain, appHeader },
 
   created() {
     store.isLoading = true;
@@ -24,12 +24,7 @@ export default {
 <template>
   <!--HEADER:-->
   <HEADER>
-    <h1 class="text-center title_font mt-2">Pokedex</h1>
-    <div class="filter">
-      <appSelect defaultLabel="All types"
-        :options='["Bug", "Dark", "Dragon", "Electric", "Fairy", "Fighting", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water"]' />
-    </div>
-
+    <appHeader />
   </HEADER>
 
   <!--MAIN CONTENT:-->
