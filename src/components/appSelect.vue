@@ -1,26 +1,21 @@
 <script >
 export default {
+    data() {
+        return {
+            selectedOption: ''
+        }
+    },
     props: {
+        options: Array,
         defaultLabel: String
     }
 };
 </script>
 
 <template>
-    <select>
+    <select v-model="selectedOption">
         <option value="">{{ defaultLabel || '---' }}</option>
-        <option>Opzione 1</option>
-        <option>Opzione 2</option>
-        <option>Opzione 3</option>
+        <option v-for="option in options" :key="option">{{ option }}</option>
     </select>
 </template>
 
-<style>
-/*CSS reset*/
-
-/*Pseudo-classes*/
-
-/*Generics*/
-
-/*Utilties*/
-</style>
