@@ -74,7 +74,7 @@ export default {
 .style_pokedex {
   background-color: rgb(72, 72, 72);
   width: 580px;
-  margin: 0 auto 50px auto;
+  margin: 0 auto 10px auto;
   padding-top: 20px;
   border-radius: 50px;
 }
