@@ -48,7 +48,8 @@ h4 {
 }
 
 .card-active {
-    border: solid gold 1px;
+    border: solid rgb(10, 238, 10) 5px;
+    box-shadow: none;
     border-style: outset;
     cursor: pointer;
 }

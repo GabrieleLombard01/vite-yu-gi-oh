@@ -49,15 +49,70 @@ export default {
     </header>
 
     <!-- MAIN CONTENT: -->
-    <main>
-      <appMain />
-    </main>
+
+    <div class="style_pokedex">
+      <div class="center_div">
+        <div class="speaker_poked d-inline-block"></div>
+        <div class="front_camera d-inline-block text-white"></div>
+      </div>
+      <main>
+
+        <appMain />
+      </main>
+      <div class="d-flex">
+        <button class="home_btn"></button>
+      </div>
+    </div>
   </div>
 </template>
 
 
 <style lang="scss">
 @use '../src/assets/scss/style.scss';
+
+/*STYLE POKEDEX:*/
+.style_pokedex {
+  background-color: rgb(72, 72, 72);
+  width: 580px;
+  margin: 0 auto 50px auto;
+  padding-top: 20px;
+  border-radius: 50px;
+}
+
+.center_div {
+  width: 315px;
+  margin: auto;
+}
+
+.speaker_poked {
+  background-color: black;
+  height: 8px;
+  margin: 7px auto;
+  width: 250px;
+  border-radius: 5px;
+}
+
+.front_camera {
+  height: 25px;
+  width: 25px;
+  background-color: black;
+  margin: 0px 20px;
+  border-radius: 50%;
+
+}
+
+.home_btn {
+  background-color: grey;
+  border: solid black;
+  margin: 20px auto;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+.home_btn:hover {
+  background-color: black;
+}
 </style>
 
 

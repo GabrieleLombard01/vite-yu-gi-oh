@@ -17,7 +17,7 @@ export default {
             <h2>Caricamento...</h2>
         </div>
 
-        <div v-else class="row g-2 row-cols-2 row-cols-md-3 ">
+        <div v-else class="row g-2 row-cols-2  ">
             <div v-for="pkm in store.pokemon" :key="pkm._id" class="col">
                 <pokemonCard :name="pkm.name" :image="pkm.imageUrl" :type="pkm.type1" :number="pkm.number" />
             </div>
