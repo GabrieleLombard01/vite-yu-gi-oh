@@ -1,19 +1,18 @@
-<script >
+<script>
 export default {
     data() {
         return {
-            selectedOption: ''
-        }
+            selectedOption: '',
+        };
     },
     props: {
         options: Array,
         defaultLabel: String,
-        initialValue: String
+        initialValue: String,
     },
-    emits: ['option-change'],
     mounted() {
         this.selectedOption = this.initialValue || '';
-    }
+    },
 };
 </script>
 
@@ -23,3 +22,6 @@ export default {
         <option v-for="option in options" :key="option">{{ option }}</option>
     </select>
 </template>
+  
+
+  
