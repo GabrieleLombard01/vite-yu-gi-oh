@@ -55,7 +55,7 @@ h4 {
 }
 
 .card img {
-    filter: grayscale(50%);
+    filter: grayscale(40%);
 }
 
 .card:hover img {
