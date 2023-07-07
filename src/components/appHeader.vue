@@ -20,10 +20,10 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div class="d-flex justify-content-center align-items-center">
         <h1 class="text-center title_font mt-2">Pokedex</h1>
         <div class="filter">
-            <appSelect defaultLabel="All types" :options="types" @option-change="onTypeChange" />
+            <appSelect class="rounded-2 ms-5" defaultLabel="All types" :options="types" @option-change="onTypeChange" />
         </div>
     </div>
 </template>
